@@ -21,10 +21,7 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        
-        # Verify credentials against the stored user information in the database
         if verify_credentials(username, password):
-            # User authentication succeeded
             session['username'] = username  
             return redirect('/dashboard') 
         else:
